@@ -14,7 +14,7 @@ export default class Profile extends Component {
 	};
 
 
-	hello = (query) => {
+	googlecse = (query) => {
 		if (query) {
 			this.setState({
 				search: query
@@ -22,24 +22,18 @@ export default class Profile extends Component {
 		}
 		var that = this;
 
-		var KEY = "AIzaSyBcSZeMVGjJAot6Jyp_XHr17gOpiTqJiHE"
+		var KEY = "AIzaSyAD4W_EDH-Pwow_nqEnO4EAEhWOeqLHWtI"
 		var CSE = "003584803117743572628:ne8j-9gtn0m"
-		console.log(">>.", "https://www.googleapis.com/customsearch/v1?key=" + KEY + "&cx=" + CSE + "&q=" + this.state.search + "&exactTerms=" + this.state.exactTerms + "&excludeTerms=" + this.state.excludeTerms)
 		axios.get("https://www.googleapis.com/customsearch/v1?key=" + KEY + "&cx=" + CSE + "&q=" + this.state.search + "&exactTerms=" + this.state.exactTerms + "&excludeTerms=" + this.state.excludeTerms)
 			.then(function(response) {
 
 				console.log("response>", response.data.items)
-					// console.log(">>>", that.state.count)
 
 				that.setState({
 					articles: response.data.items
 				});
 
-				// console.log("response", this.restaurants)
-				// this.setState({
-				// 	count: this.state.count + 1
-				// });
-				// this.state.restaurants = response.restaurants
+
 
 			});
 
@@ -53,30 +47,6 @@ export default class Profile extends Component {
 		console.log("here", this.state)
 	}
 
-	// change = (value) => {
-	// 	console.log("event.target.value", value)
-	// 	this.setState({
-	// 		selected: value
-	// 	});
-
-	// 	console.log("this", this.state.selected)
-	// }
-	// sort = (value) => {
-	// 	console.log("event.target.value", value)
-	// 	this.setState({
-	// 		sort: value
-	// 	});
-
-	// 	console.log("this", this.state.selected)
-	// }
-	// order = (value) => {
-	// 	console.log("event.target.value", value)
-	// 	this.setState({
-	// 		order: value
-	// 	});
-
-	// 	console.log("this", this.state.selected)
-	// }
 	render({
 		search,
 		articles,
@@ -98,14 +68,14 @@ export default class Profile extends Component {
 				<form onSubmit={(e) => e.preventDefault()}>
 					<div class="field">
 
-					<input class={style.myinput} type="text" name="search" placeholder="Search.." onkeyup={(e) => this.hello(e.target.value) }/>
+					<input class={style.myinput} type="text" name="search" placeholder="Search.." onkeyup={(e) => this.googlecse(e.target.value) }/>
 					</div>
 					<br/>
 					
 					<input type="text" name="Exact Terms" placeholder="Include Exact Terms" value={this.state.exactTerms} onChange={this.handleChange.bind(this, 'exactTerms')}/>
 					<br/>
 					<input type="text" name="Exclude Terms" placeholder="Exclude Terms" value={this.state.excludeTerms} onChange={this.handleChange.bind(this, 'excludeTerms')}/>
-					<button class={style.button} onclick={(e)=>this.hello()}  type="submit">filter</button>
+					<button class={style.button} onclick={(e)=>this.googlecse()}  type="submit">filter</button>
 					<br/>
 					
 				</form>
