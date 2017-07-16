@@ -1,7 +1,7 @@
 {
-  "name": "sample-project",
-  "version": "6.0.0",
-  "description": "Ready-to-go Preact starter project powered by webpack.",
+  "name": "custom-search",
+  "version": "1.0.0",
+  "description": "preact framework for custom search",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
     "start": "serve build -s -c 1",
@@ -12,13 +12,6 @@
     "test:watch": "npm run -s test -- --watch",
     "lint": "eslint src test"
   },
-  "keywords": [
-    "preact",
-    "boilerplate",
-    "webpack"
-  ],
-  "license": "MIT",
-  "author": "Jason Miller <jason@developit.ca>",
   "jest": {
     "setupFiles": [
       "./test/setup.js"
@@ -40,6 +33,23 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ]
+  },
+  "main": "webpack.config.babel.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "request": "^2.81.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kj-kanishka/Custom-Search.git"
+  },
+  "author": "Kanishka joshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kj-kanishka/Custom-Search/issues"
   },
   "devDependencies": {
     "autoprefixer": "^7.0.1",
@@ -101,5 +111,6 @@
   "main": "webpack.config.babel.js",
   "directories": {
     "test": "test"
-  }
+  },
+  "homepage": "https://github.com/kj-kanishka/Custom-Search#readme"
 }
