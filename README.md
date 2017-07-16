@@ -5,8 +5,8 @@
 **1. Clone this repo:**
 
 ```sh
-git clone --depth 1 https://github.com/developit/preact-boilerplate.git my-app
-cd my-app
+git clone --depth 1 https://github.com/kj-kanishka/Custom-Search
+cd Custom-Search
 ```
 
 
