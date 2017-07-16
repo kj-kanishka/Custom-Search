@@ -7,16 +7,25 @@ import axios from 'axios'; //npm module for http requests
 export default class Profile extends Component {
 	state = {
 		search: "",
-		articles: []
+		articles: [],
+		exactTerms: "",
+		excludeTerms: ""
 
 	};
 
 
 	hello = (query) => {
+		if (query) {
+			this.setState({
+				search: query
+			});
+		}
 		var that = this;
-		var KEY = "AIzaSyAzvprxLLASFjHotKv1Le9x297s2n1Tu3o"
+
+		var KEY = "AIzaSyBcSZeMVGjJAot6Jyp_XHr17gOpiTqJiHE"
 		var CSE = "003584803117743572628:ne8j-9gtn0m"
-		axios.get("https://www.googleapis.com/customsearch/v1?key=" + KEY + "&cx=" + CSE + "&q=" + query)
+		console.log(">>.", "https://www.googleapis.com/customsearch/v1?key=" + KEY + "&cx=" + CSE + "&q=" + this.state.search + "&exactTerms=" + this.state.exactTerms + "&excludeTerms=" + this.state.excludeTerms)
+		axios.get("https://www.googleapis.com/customsearch/v1?key=" + KEY + "&cx=" + CSE + "&q=" + this.state.search + "&exactTerms=" + this.state.exactTerms + "&excludeTerms=" + this.state.excludeTerms)
 			.then(function(response) {
 
 				console.log("response>", response.data.items)
@@ -34,6 +43,14 @@ export default class Profile extends Component {
 
 			});
 
+	}
+	handleChange = function(state, e) {
+
+		this.setState({
+			[state]: e.target.value
+		});
+
+		console.log("here", this.state)
 	}
 
 	// change = (value) => {
@@ -62,7 +79,9 @@ export default class Profile extends Component {
 	// }
 	render({
 		search,
-		articles
+		articles,
+		exactTerms,
+		excludeTerms
 
 
 	}) {
@@ -83,17 +102,20 @@ export default class Profile extends Component {
 					</div>
 					<br/>
 					
-					
+					<input type="text" name="Exact Terms" placeholder="Include Exact Terms" value={this.state.exactTerms} onChange={this.handleChange.bind(this, 'exactTerms')}/>
+					<br/>
+					<input type="text" name="Exclude Terms" placeholder="Exclude Terms" value={this.state.excludeTerms} onChange={this.handleChange.bind(this, 'excludeTerms')}/>
+					<button class={style.button} onclick={(e)=>this.hello()}  type="submit">filter</button>
 					<br/>
 					
 				</form>
 				<ul>
 				{this.state.articles.map(function(d){
-					return   <li >
+					return   <li>
 					{
 						function(){
 							if(d.pagemap.cse_image&&d.pagemap.cse_image.length){
-								return <img src={d.pagemap.cse_image[0].src} style="width:100px;height:50px;"/>
+								return <img src={d.pagemap.cse_image[0].src} style="width:100px;height:60px;"/>
 							}
 						}()
 					}
