@@ -1,0 +1,103 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #FAFAFA;
+  font-family: 'Helvetica Neue', arial, sans-serif;
+  font-weight: 400;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: border-box;
+}
+#app {
+  height: 100%;
+}
+.JmD9RgpseyQdqQb9x-LXt {
+  padding: 56px 20px;
+  min-height: 100%;
+  width: 100%;
+  background: #EEE;
+}
+.Lhtyayg6Cn0CNiOC4XJPQ[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url(/2cbedfd68f59e42b0d03ba3946863ee7.png);
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+.Lhtyayg6Cn0CNiOC4XJPQ[type=text]:focus {
+  width: 100%;
+}
+.jS0Df_kmwX5DQxYegT3Sc {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url(/2cbedfd68f59e42b0d03ba3946863ee7.png);
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+._2xyY27-hSytDZNDhO4G8vI {
+  padding: 56px 20px;
+  min-height: 100%;
+  width: 100%;
+}
+._3fP58XuPgCmDWOEWzAZZKf {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  padding: 0;
+  background: #673AB7;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+._3fP58XuPgCmDWOEWzAZZKf h1 {
+  float: left;
+  margin: 0;
+  padding: 0 15px;
+  font-size: 24px;
+  line-height: 56px;
+  font-weight: 400;
+  color: #FFF;
+}
+._3fP58XuPgCmDWOEWzAZZKf nav {
+  float: right;
+  font-size: 100%;
+}
+._3fP58XuPgCmDWOEWzAZZKf nav a {
+  display: inline-block;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 15px;
+  min-width: 50px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  text-decoration: none;
+  color: #EEE;
+  will-change: background-color;
+}
+._3fP58XuPgCmDWOEWzAZZKf nav a:hover,
+._3fP58XuPgCmDWOEWzAZZKf nav a:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/*# sourceMappingURL=style.css.map*/
